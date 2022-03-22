@@ -19,5 +19,5 @@ app.use('/api/events', require('./routes/events'));
 
 
 app.listen(process.env.PORT, () => {
-  console.log('running on port 3005');
+  console.log(`Running on port ${process.env.PORT}`);
 });
