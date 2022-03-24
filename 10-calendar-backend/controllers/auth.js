@@ -10,7 +10,7 @@ const createUser = async(req, res = response) => {
     let user = await User.findOne({email});
     if(user) {
       return res.status(400).json({
-        ok: true,
+        ok: false,
         msg: 'Ese correo ya existe',
       });
     }
@@ -47,7 +47,7 @@ const loginUser = async(req, res = response) => {
     const user = await User.findOne({email});
     if(!user) {
       return res.status(400).json({
-        ok: true,
+        ok: false,
         msg: 'Credenciales invalidas',
       });
     }
